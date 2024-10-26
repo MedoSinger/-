@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>تفاصيل المنتج</h1>
+        <nav>
+            <a href="index.html">الصفحة الرئيسية</a>
+            <a href="#about">من نحن</a>
+            <a href="#contact">اتصل بنا</a>
+        </nav>
+    </header>
+
+    <section id="productDetails">
+        <h2 id="productTitle">ال</h2>
+        <img id="productImage" src="" alt="صورة المنتج">
+        <p id="productDescription"></p>
+        <p id="productPrice"></p>
+        <button onclick="addToCart()">أضف إلى السلة</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 متجر العصائر. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // استرجاع تفاصيل المنتج من رابط الصفحة
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title');
+        const description = urlParams.get('description');
+        const price = urlParams.get('price');
+        const image = urlParams.get('image');
+
+        document.getElementById('productTitle').innerText = title;
+        document.getElementById('productImage').src = image;
+        document.getElementById('productDescription').innerText = description;
+        document.getElementById('productPrice').innerText = 'السعر: ' + price + ' دولار';
+
+        function addToCart() {
+            alert("تم إضافة المنتج إلى السلة!");
+        }
+    </script>
+</body>
+</html>

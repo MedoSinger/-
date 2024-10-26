@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر العصائر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>متجر العصائر الطازجة</h1>
+        <nav>
+            <a href="#products">المنتجات</a>
+            <a href="#about">من نحن</a>
+            <a href="#contact">اتصل بنا</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>تمتع بأفضل العصائر الطبيعية الطازجة!</h2>
+        <button>تسوق الآن</button>
+    </section>
+
+    <section id="products">
+        <h3>منتجاتنا</h3>
+       <div class="product">
+    <img src="juice1.jpg" alt="عصير البرتقال">
+    <h4>عصير البرتقال</h4>
+    <p>السعر: 5 دولار</p>
+    <button onclick="window.location.href='product.html?title=عصير%20البرتقال&description=طبيعي%20100%&price=5&image=juice1.jpg'">عرض التفاصيل</button>
+</div>
+<div class="product">
+    <img src="juice2.jpg" alt="عصير التفاح">
+    <h4>عصير التفاح</h4>
+    <p>السعر: 4 دولار</p>
+    <button onclick="window.location.href='product.html?title=عصير%20التفاح&description=طبيعي%20100%&price=4&image=juice2.jpg'">عرض التفاصيل</button>
+</div>
+
+        <div class="product" onclick="openProductPopup('عصير التفاح', 'طبيعي 100%', 4)">
+            <img src="juice2.jpg" alt="عصير التفاح">
+            <h4>عصير التفاح</h4>
+            <p>السعر: 4 دولار</p>
+            <button>عرض التفاصيل</button>
+        </div>
+    </section>
+
+    <!-- النافذة المنبثقة للتفاصيل -->
+    <div id="productPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeProductPopup()">&times;</span>
+            <h4 id="popupTitle"></h4>
+            <p id="popupDescription"></p>
+            <p id="popupPrice"></p>
+            <button onclick="addToCart()">أضف إلى السلة</button>
+        </div>
+    </div>
+
+    <section id="about">
+        <h3>من نحن</h3>
+        <p>نقدم لكم أفضل العصائر الطازجة من مكونات طبيعية عالية الجودة.</p>
+    </section>
+
+    <section id="contact">
+        <h3>اتصل بنا</h3>
+        <p>البريد الإلكتروني: info@juice-shop.com</p>
+        <p>رقم الهاتف: 123-456-789</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 متجر العصائر. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
